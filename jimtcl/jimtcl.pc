@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: jimtcl
+URL: http://jim.tcl.tk/
+Description: The Jim Interpreter - A small-footprint implementation of the Tcl programming language.
+Version: 0.80
+Requires: 
+Libs: -L${libdir} -ljim
+Libs.private: 
+Cflags: -I${includedir} 

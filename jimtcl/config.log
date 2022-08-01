@@ -1,0 +1,122 @@
+Invoked as: /home/dposterick/Downloads/riscv-openocd-wch/jimtcl/configure --disable-install-jim --disable-option-checking --prefix=/usr/local --disable-werror --enable-wlink --cache-file=/dev/null --srcdir=.
+Tclsh: /home/dposterick/Downloads/riscv-openocd-wch/jimtcl/jimsh0
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c:1:10: fatal error: util.h: No such file or directory
+    1 | #include <util.h>
+      |          ^~~~~~~~
+compilation terminated.
+============
+The failed code was:
+#include <util.h>
+int main(void) {
+
+return 0;
+}
+============
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c:1:10: fatal error: crt_externs.h: No such file or directory
+    1 | #include <crt_externs.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+============
+The failed code was:
+#include <crt_externs.h>
+int main(void) {
+
+return 0;
+}
+============
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c: In function 'main':
+conftest__.c:3:12: error: size of array '_x' is negative
+    3 | static int _x[sizeof(time_t) == 4 ? 1 : -1] = { 1 };
+      |            ^~
+============
+The failed code was:
+#include <time.h>
+int main(void) {
+static int _x[sizeof(time_t) == 4 ? 1 : -1] = { 1 };
+return 0;
+}
+============
+Failed: cc -g -O2 conftest__.c -o conftest__
+/usr/bin/ld: /tmp/cctgKbHK.o: in function `main':
+/home/dposterick/Downloads/riscv-openocd-wch/jimtcl/conftest__.c:3: undefined reference to `sys_signame'
+collect2: error: ld returned 1 exit status
+============
+The failed code was:
+extern void sys_signame(void);
+int main(void) {
+sys_signame();
+return 0;
+}
+============
+Failed: cc -g -O2 conftest__.c -o conftest__
+/usr/bin/ld: /tmp/cckCDPEn.o: in function `main':
+/home/dposterick/Downloads/riscv-openocd-wch/jimtcl/conftest__.c:3: undefined reference to `sys_siglist'
+collect2: error: ld returned 1 exit status
+============
+The failed code was:
+extern void sys_siglist(void);
+int main(void) {
+sys_siglist();
+return 0;
+}
+============
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c: In function 'main':
+conftest__.c:4:40: error: 'struct stat' has no member named 'st_mtimespec'
+    4 | static struct stat _s; return sizeof(_s.st_mtimespec);
+      |                                        ^
+============
+The failed code was:
+#include <sys/types.h>
+#include <sys/stat.h>
+int main(void) {
+static struct stat _s; return sizeof(_s.st_mtimespec);
+return 0;
+}
+============
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c: In function 'main':
+conftest__.c:3:12: error: size of array '_x' is negative
+    3 | static int _x[sizeof(off_t) == 4 ? 1 : -1] = { 1 };
+      |            ^~
+============
+The failed code was:
+#include <sys/types.h>
+int main(void) {
+static int _x[sizeof(off_t) == 4 ? 1 : -1] = { 1 };
+return 0;
+}
+============
+Failed: cc -g -O2 conftest__.c -o conftest__
+/usr/bin/ld: /tmp/ccMkJ5hs.o: in function `main':
+/home/dposterick/Downloads/riscv-openocd-wch/jimtcl/conftest__.c:3: undefined reference to `_NSGetEnviron'
+collect2: error: ld returned 1 exit status
+============
+The failed code was:
+extern void _NSGetEnviron(void);
+int main(void) {
+_NSGetEnviron();
+return 0;
+}
+============
+Failed: cc -g -O2 -c conftest__.c -o conftest__.o
+conftest__.c: In function 'main':
+conftest__.c:4:1: error: too few arguments to function 'mkdir'
+    4 | mkdir("/dummy");
+      | ^~~~~
+In file included from conftest__.c:2:
+/usr/include/sys/stat.h:389:12: note: declared here
+  389 | extern int mkdir (const char *__path, __mode_t __mode)
+      |            ^~~~~
+============
+The failed code was:
+#include <sys/types.h>
+#include <sys/stat.h>
+int main(void) {
+mkdir("/dummy");
+return 0;
+}
+============
